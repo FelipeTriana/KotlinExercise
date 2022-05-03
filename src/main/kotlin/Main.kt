@@ -1,14 +1,18 @@
+import java.util.*
+
 fun main(args: Array<String>) {
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
 
     val manager = Manager()
     val operator = Operator(hoursWorked = 230)
     val accountant = Accountant()
 
+    println("Escriba el número del rol(1: Manager, 2:Operador, 3:Contador) despues pulse enter")
+    val scan = Scanner(System.`in`)
+    val rol = scan.nextLine()
+
     val  salary = Salary()
     val result: String
-    when (args[0]) {
+    when (rol) {
         "1" -> result = salary.calculateSalary(manager)
         "2" -> result = salary.calculateSalary(operator)
         "3" -> result = salary.calculateSalary(accountant)
